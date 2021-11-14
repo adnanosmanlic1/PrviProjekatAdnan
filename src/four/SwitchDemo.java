@@ -4,6 +4,7 @@ import javax.swing.*;
 
 /**
  * Kontrola toka
+ * switch - case -break
  *prost tip podataka
  * 1. Int --> java.lang.Integer
  * 2.short--> Short
@@ -21,29 +22,32 @@ public class SwitchDemo {
         String imeDana = null; //null
         switch (brojDana){
             case 1:
-                imeDana = "Montag"
+                imeDana = "Montag";
                 break;
             case 2:
-                imeDana = "Dienstag"
+                imeDana = "Dienstag";
                 break;
             case 3:
-                imeDana = "Mittwoch"
+                imeDana = "Mittwoch";
                 break;
             case 4:
-                imeDana = "Donnerstag"
+                imeDana = "Donnerstag";
                 break;
             case 5:
-                imeDana = "Freitag"
+                imeDana = "Freitag";
                 break;
             case 6:
-                imeDana = "Samstag"
+                imeDana = "Samstag";
                 break;
-            case 7:imeDana = "Sonntag"
+            case 7:imeDana = "Sonntag";
                 break;
             default:
-                System.out.println("Sedmica ima 7 dana i upravo zbog toga jeste sedmica");
+                JOptionPane.showMessageDialog(null, "Sedmica ima 7 dana i upravo zbog toga jeste sedmica");
         }
-        if()
+        if(imeDana!= null){
+            JOptionPane.showMessageDialog(null,"Tag" + imeDana);
+        }
+
 
 
     }
