@@ -1,4 +1,4 @@
-package four;
+package loop;
 
 /** PETLJA - blok koda koji se izvršava sve dok je zadovoljen uslov petlje
 /**  while(condition) {blok koda}
