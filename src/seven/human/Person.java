@@ -1,7 +1,7 @@
 package seven.human;
 
 import seven.Gender;
-import seven.animal.Dog;
+import seven.animal.*;
 
 public class Person {
     private int id;
@@ -9,7 +9,7 @@ public class Person {
     private String surname; //polje
     private Gender gender; // polje
     private int age;
-    private Dog dog;
+    private Animal animal;
 
     public Person(){
         super();
@@ -56,12 +56,12 @@ public class Person {
         this.age = age;
     }
 
-    public Dog getDog() {
-        return dog;
+    public Animal getAnimal() {
+        return animal;
     }
 
-    public void setDog(Dog dog) {
-        this.dog = dog;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 }
 
