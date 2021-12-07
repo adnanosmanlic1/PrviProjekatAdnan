@@ -22,4 +22,7 @@ package five;
     public Person(){
         System.out.println("Konstruisana instanca....");
     }
+    public void setName(String name){
+        this.name = name;
+    }
 }
