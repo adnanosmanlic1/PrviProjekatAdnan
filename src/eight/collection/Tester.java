@@ -4,7 +4,7 @@ import seven.Gender;
 
 import java.util.*;
 
-public class Tester {
+/*public class Tester {
     public static void main(String[] args) {
         Set<Person> persons = new TreeSet<>();
         Person p1 = new Person("Jasna", "Ibrahimovic", Gender.FEMALE,13);
@@ -31,4 +31,4 @@ public class Tester {
         }
 
     }
-}
+}*/

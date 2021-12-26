@@ -51,6 +51,11 @@ public class Movie {
         System.out.println("Konstruktor sa jednim parapetrom se pozvao");
         counter++;
     }
+
+    public Movie() {
+
+    }
+
     public int getReview(){
         return review;
     }
@@ -66,20 +71,25 @@ public class Movie {
         return title;
     }
 
-    public void setTitle(String title)
+    public Movie setTitle(String title)
     {
         this.title = title;
+        return this;
     }
 
     public String getDirector() {
         return director;
     }
 
-    public void setDirector(String director) {
+    public Movie setDirector(String director) {
         this.director = director;
+        return this;
     }
 
     public static void print(){
         System.out.println("Counter: " + counter);
+    }
+    public String toString(){
+        return "FILM "+ title;
     }
 }

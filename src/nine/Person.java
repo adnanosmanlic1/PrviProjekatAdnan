@@ -3,24 +3,27 @@ package nine;
 import seven.Gender;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Objects;
 
-public class Person  {
+public class Person implements Comparable<Person> {
     private int id;
     private String name;
     private String surname;
     private Gender gender;
-    private LocalDate age;
+    //year,month,day
+    private LocalDate birthday;
 
-    public Person(){
+    public Person() {
 
     }
 
-    public Person(int id, String name, String surname, Gender gender, int age) {
+    public Person(int id, String name, String surname, Gender gender, LocalDate birthday) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.gender = gender;
-        this.age = age;
+        this.birthday = birthday;
     }
 
     public int getId() {
@@ -56,10 +59,69 @@ public class Person  {
     }
 
     public int getAge() {
+        //java.time biblioteka
+        LocalDate now = LocalDate.now();
+        Period period = birthday.until(now);
+        int age = period.getYears();
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Person)) {
+            return false;
+        }
+        Person comparedPerson = (Person)obj;
+        return id == comparedPerson.getId()
+                && this.name.equals(comparedPerson.getName())
+                && surname.equals(comparedPerson.getSurname())
+                && gender.equals(comparedPerson.getGender())
+                && birthday.equals(comparedPerson.getBirthday());
+    }
+
+    @Override
+    public int hashCode() {
+        int hashCode = Objects.hash(id, name, surname, gender, birthday);
+
+        return hashCode;
+    }
+
+        @Override
+        public String toString(){
+            StringBuilder sb = new StringBuilder();
+            sb.append(name);
+            sb.append("  ");
+            sb.append(surname);
+            sb.append(",");
+            sb.append(gender);
+            sb.append(", birthday: ");
+            sb.append(birthday);
+            return sb.toString();
+        }
+    // p1.compareTO(p2)
+    @Override
+    public int compareTo(Person comparedPerson) {
+
+        // -1 (p1<p2)
+        // 0(p1=p2)
+        //+1(p1>p2)
+        int result = name.compareTo(comparedPerson.getName());
+        if(result == 0){
+           result= surname.compareTo(comparedPerson.getSurname());
+        }
+        if(result == 0){
+            result = birthday.compareTo(comparedPerson.getBirthday());
+        }
+
+        return result;
     }
 }
+
